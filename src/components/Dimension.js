@@ -1,6 +1,30 @@
-import React from 'react'
-import { useDimension } from '../hooks/useDimension'
-import Value from './Value'
+import React, {useState, useEffect} from 'react'
+
+function useDimension(){
+    const [height, setHeight] = useState(window.innerHeight)
+    const [width, setWidth] = useState(window.innerWidth)
+    useEffect(()=>{
+        function handleDimension(){
+            setHeight(window.innerHeight)
+            setWidth(window.innerWidth)
+        }
+        window.addEventListener('resize', handleDimension)
+        return ()=> window.removeEventListener('resize', handleDimension)
+
+    },[])
+    return {height, width}
+}
+
+
+function Value({value, number}) {
+  return (
+    <div className=' flex justify-between'>
+        <p className='text-[25px]'>{value}</p>
+        <p className=' text-[25px] text-blue-600'>{number}</p>
+    </div>
+  )
+}
+
 
 function Dimension() {
     const {height, width} = useDimension()
