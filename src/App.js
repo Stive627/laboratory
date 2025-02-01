@@ -1,13 +1,13 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { ProfileProvider } from './logic/ContextProfile';
 import Profile from './Pages/Profile';
-import Tooltip from './components/Tooltip';
+import ChartUI from './components/ChartUI';
 function App() {
   return (
     <ProfileProvider>
       <Router>
         <Routes>
-          <Route path='/' element={<Tooltip/>}/>
+          <Route path='/' element={<ChartUI/>}/>
           <Route path='/profile' element={<Profile/>}/>
         </Routes>
       </Router>
