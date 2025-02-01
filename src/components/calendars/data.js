@@ -1,5 +1,5 @@
-export const data = {
-    'january':{ 
+const data = {
+    '01':{ 
         month:'January',
         r1:[undefined, undefined, undefined, '01','02','03','04'],
         r2:['05','06','07','08','09','10','11'],
@@ -7,7 +7,7 @@ export const data = {
         r4:['19','20','21','22','23','24','25'],
         r5:['26','27','28','29','30','31',undefined]
     },
-    'february':{ 
+    '02':{ 
         month:'February',
         r1:[undefined, undefined, undefined, undefined,undefined,undefined,'01'],
         r2:['02','03','04','05','06','07','08'],
@@ -15,7 +15,7 @@ export const data = {
         r4:['16','17','18','19','20','21','22'],
         r5:['23','24','25','26','27','28',undefined]
     },
-    'march':{ 
+    '03':{ 
         month:'March',
         r1:[undefined, undefined, undefined, undefined,undefined,undefined,'01'],
         r2:['02','03','04','05','06','07','08'],
@@ -25,3 +25,5 @@ export const data = {
         r6:['30','31',undefined,undefined,undefined,undefined,undefined]
     }
 }
+
+export default data
