@@ -1,7 +1,7 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { ProfileProvider } from './logic/ContextProfile';
 import Profile from './Pages/Profile';
-import Calendar from './components/calendars/calendar';
+import Calendar from  './components/calendars/Calendar'
 function App() {
   return (
     <ProfileProvider>

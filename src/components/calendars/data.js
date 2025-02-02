@@ -1,6 +1,7 @@
 const data = {
     '01':{ 
         month:'January',
+        digit_month:'01',
         r1:[undefined, undefined, undefined, '01','02','03','04'],
         r2:['05','06','07','08','09','10','11'],
         r3:['12','13','14','15','16','17','18'],
@@ -9,6 +10,7 @@ const data = {
     },
     '02':{ 
         month:'February',
+        digit_month:'02',
         r1:[undefined, undefined, undefined, undefined,undefined,undefined,'01'],
         r2:['02','03','04','05','06','07','08'],
         r3:['09','10','11','12','13','14','15'],
@@ -17,6 +19,7 @@ const data = {
     },
     '03':{ 
         month:'March',
+        digit_month:'03',
         r1:[undefined, undefined, undefined, undefined,undefined,undefined,'01'],
         r2:['02','03','04','05','06','07','08'],
         r3:['09','10','11','12','13','14','15'],
