@@ -14,10 +14,16 @@ function Calendar() {
     const years = ['2025', '2026', '2027', '2028']
     const currMonth = months[indx%12]
     const currYear = years[Math.floor(indx/12)]
+    const numberYear = Math.floor(data.length/12)
+    const handleSelect = (year) => setIndx(12*year)
+    let arr = []
+    for(var i = 0; i < numberYear; i ++){
+      arr = [...arr, 2025 + i]
+    }
   return (
     <div className=' w-screen h-screen flex justify-center'>
       <div className=' w-3/4 lg:w-1/2'>
-        <HeadCalendar curMonth={currMonth} currYear={currYear} handleNext={nextMonth} handlePrevious={prevMonth}/>
+        <HeadCalendar curMonth={currMonth} currYear={currYear} handleNext={nextMonth} handlePrevious={prevMonth} handleSelect={handleSelect} arr={arr}/>
         <Month month = {data[indx]} cm={indx +1 % 12 === parseInt(charMonth)}/>
       </div>
     </div>
