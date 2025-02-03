@@ -15,7 +15,7 @@ function Calendar() {
     const currMonth = months[indx%12]
     const currYear = years[Math.floor(indx/12)]
     const numberYear = Math.floor(data.length/12)
-    const handleSelect = (year) => setIndx(12*year)
+    const handleSelect = (year) => setIndx(12*year + indx%12)
     let arr = []
     for(var i = 0; i < numberYear; i ++){
       arr = [...arr, 2025 + i]
