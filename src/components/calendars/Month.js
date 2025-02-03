@@ -1,44 +1,20 @@
 import React from 'react'
 
-function Month({month, r1, r2, r3, r4, r5, r6=undefined}) {
+function Month({month, cm}) {
     const title = ['S','M','T','W','T','F','S']
-    const yearMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    const darkcolor = 'rgba(67, 67, 67, 1)'
     const date = new Date()
     const day = date.getDate()
-    const charMonth =  new Intl.DateTimeFormat('fr-FR', {month:'2-digit'}).format(new Date())
-    const currentMonth = (m) => parseInt(charMonth) === yearMonths.indexOf(m) + 1
     const currentday = (value) => Number(value) === day
-    const DayUI = ({d, m}) => <button className={`${currentday(d) && currentMonth(m) && ' text-white bg-black border-black'} ${currentday(d) && !currentMonth(m) &&'bg-gray-300'}  border rounded-full ${d && 'p-2'}`}>{d}</button>
-    console.log(currentMonth('03'))
+    const Square = ({d}) => <div className=' w-14 h-14 flex justify-center items-center'><div><button style={(currentday(d) && cm )?{color:'white', backgroundColor:'rgba(22, 124, 255, 1)'}:{backgroundColor:'white'}} className={`${currentday(d) && cm &&  ' text-white'} ${currentday(d) && !cm &&' border'} rounded-full p-2 w-6 h-6 flex items-center justify-center`}><p>{d}</p></button></div></div>
   return (
-    <table className=' w-full border' style={{borderColor:'rgba(204, 204, 204, 1)'}}>
-        <tbody>
+    <>   
+      <div className=' w-full flex justify-between'>{title.map((elt, indx) => <p className=' text-center text-[19px]' style={{color:darkcolor}} key={indx}>{elt}</p>)}</div> 
+      <div className=' w-full grid grid-cols-7 divide-y divide-x   divide-gray-200'>
+          {month.map((elt, indx) => <Square key={indx} d={elt}/>)}
+      </div>
+    </>
 
-        <tr>
-            {title.map((elt, indx) => <th key={indx}>{elt}</th>)}
-        </tr>
-        <tr>
-            {r1.map((elt, indx) => <td key={indx} className=' '><DayUI d={elt} m={month}/></td>)}
-        </tr>
-        <tr>
-            {r2.map((elt, indx) => <td key={indx}><DayUI d={elt} m={month}/></td>)}
-        </tr>
-        <tr>
-            {r3.map((elt, indx) => <td key={indx}><DayUI d={elt} m={month}/></td>)}
-        </tr>
-        <tr>
-            {r4.map((elt, indx) => <td key={indx}><DayUI d={elt} m={month}/></td>)}
-        </tr>
-        <tr>
-            {r5.map((elt, indx) => <td key={indx}><DayUI d={elt} m={month}/></td>)}
-        </tr>
-        {
-        r6 &&   <tr>
-                    {r6.map((elt, indx) => <td key={indx}><DayUI d={elt} m={month}/></td>)}
-                </tr>
-        }
-        </tbody>
-    </table>
   )
 }
 
