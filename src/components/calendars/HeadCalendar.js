@@ -6,7 +6,6 @@ function HeadCalendar({curMonth, currYear, handleNext, handlePrevious, handleSel
     const bluecolor = 'rgba(22, 124, 255, 1)'
     const darkcolor = 'rgba(67, 67, 67, 1)'
     const [show, setShow] = useState(false)
-    console.log(arr)
   return (
     <div className=' w-full py-2 my-1 flex justify-between'>
         <div className=' flex flex-row'>
@@ -18,7 +17,7 @@ function HeadCalendar({curMonth, currYear, handleNext, handlePrevious, handleSel
             <button onClick={()=> setShow(!show)} style={{color:darkcolor}} className='text-[26px] cursor-pointer'>{currYear}</button>
             { show &&  <div className=' absolute  w-32 bg-white border'>
                           <div className=' w-full flex flex-col divide-y divide-blue-400'>
-                            {arr.map((elt, indx) => <button onClick={()=> {handleSelect(indx); setShow(!show); console.log(elt)}} key={indx} className={`w-full text-[18px] p-2 ${parseInt(elt) === parseInt(currYear) && 'bg-blue-500 text-white'}`}>{elt}</button>)}
+                            {arr.map((elt, indx) => <button onClick={()=> {handleSelect(indx); setShow(!show);}} key={indx} className={`w-full text-[18px] p-2 ${parseInt(elt) === parseInt(currYear) && 'bg-blue-500 text-white'}`}>{elt}</button>)}
                           </div>
                       </div>}
         </div>
