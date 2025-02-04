@@ -17,7 +17,7 @@ function HeadCalendar({curMonth, currYear, handleNext, handlePrevious, handleSel
             <button onClick={()=> setShow(!show)} style={{color:darkcolor}} className='text-[18px] cursor-pointer'>{currYear}</button>
             { show && <div className=' relative'> <div className=' absolute right-1 bg-white border'>
                           <div className=' w-full flex flex-col divide-y divide-blue-400'>
-                            {arr.map((elt, indx) => <button onClick = {() => {handleSelect(indx); setShow(!show);}} key={indx} className={`w-full text-[18px] p-1 ${parseInt(elt) === parseInt(currYear) && 'bg-blue-500 text-white'}`}>{elt}</button>)}
+                            {arr.map((elt, indx) => <button onClick = {() => {handleSelect(indx); setShow(!show);}} key={indx} className={`text-[18px] p-2 w-24  ${parseInt(elt) === parseInt(currYear) && 'bg-blue-500 text-white'}`}>{elt}</button>)}
                           </div>
                           </div></div>}
         </div>
