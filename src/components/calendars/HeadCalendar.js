@@ -7,6 +7,7 @@ function HeadCalendar({curMonth, currYear, handleNext, handlePrevious, handleSel
     const darkcolor = 'rgba(67, 67, 67, 1)'
     const [show, setShow] = useState(false)
   return (
+    <div className=' relative'>
     <div className=' w-full py-1 my-1 flex justify-between'>
         <div className=' flex flex-row text-[18px]'>
             <div><button  onClick={()=> handlePrevious()}><ArrowBackIosNewIcon style={{color:bluecolor}}/></button></div>
@@ -15,13 +16,17 @@ function HeadCalendar({curMonth, currYear, handleNext, handlePrevious, handleSel
         </div>
         <div >
             <button onClick={()=> setShow(!show)} style={{color:darkcolor}} className='text-[18px] cursor-pointer'>{currYear}</button>
-            { show && <div className=' relative'> <div className=' absolute right-1 bg-white border'>
-                          <div className=' w-full flex flex-col divide-y divide-blue-400'>
-                            {arr.map((elt, indx) => <button onClick = {() => {handleSelect(indx); setShow(!show);}} key={indx} className={`text-[18px] p-2 w-24  ${parseInt(elt) === parseInt(currYear) && 'bg-blue-500 text-white'}`}>{elt}</button>)}
-                          </div>
-                          </div></div>}
         </div>
     </div>
+{ show && <div onClick={()=>setShow(!show)} className = 'absolute w-full'>
+            <div className=' float-right'>
+            <div className='w-full flex flex-col divide-y divide-blue-400  border '>
+                {arr.map((elt, indx) => <button onClick = {() => {handleSelect(indx); setShow(!show);}} key={indx} className={`text-[18px] py-1 px-2 w-24  ${parseInt(elt) === parseInt(currYear) ? 'bg-blue-500 text-white' : 'bg-white'}`}>{elt}</button>)}
+            </div>
+            </div>
+          </div>}
+      </div>
+
   )
 }
 
