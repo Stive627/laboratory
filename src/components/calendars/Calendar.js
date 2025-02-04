@@ -11,7 +11,7 @@ function Calendar() {
     const prevMonth = () => setIndx(indx <= 0 ? calendarSize -1  : (indx - 1) % calendarSize)
     const nextMonth = () => setIndx( indx > calendarSize -1  ? 1 : (indx + 1) % (calendarSize))
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-    const years = ['2025', '2026', '2027', '2028']
+    const years = ['2025', '2026', '2027', '2028','2029','2030']
     const currMonth = months[indx%12]
     const currYear = years[Math.floor(indx/12)]
     const numberYear = Math.floor(data.length/12)
@@ -22,7 +22,7 @@ function Calendar() {
     }
   return (
     <div className=' w-screen h-screen flex justify-center'>
-      <div className='  mx-4'>
+      <div className=' mx-4'>
         <HeadCalendar curMonth={currMonth} currYear={currYear} handleNext={nextMonth} handlePrevious={prevMonth} handleSelect={handleSelect} arr={arr}/>
         <Month month = {data[indx]} cm={indx +1 % 12 === parseInt(charMonth)}/>
       </div>

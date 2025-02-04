@@ -10,7 +10,7 @@ function Month({month, cm}) {
   return (
     <>   
       <div className = 'flex justify-between'>{title.map((elt, indx) => <p className='  text-[15px] w-full text-center' style={{color:darkcolor}} key={indx}>{elt}</p>)}</div> 
-      <div className = ' border border-gray-200 grid grid-cols-7 divide-y divide-x   divide-gray-200'>
+      <div className = 'border border-gray-200 grid grid-cols-7 divide-y divide-x   divide-gray-200'>
           {month.map((elt, indx) => <Square key={indx} d={elt}/>)}
       </div>
     </>
