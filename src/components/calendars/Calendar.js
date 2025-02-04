@@ -22,7 +22,7 @@ function Calendar() {
     }
   return (
     <div className=' w-screen h-screen flex justify-center'>
-      <div className='  mx-4'>
+      <div className=' mx-4'>
         <HeadCalendar curMonth={currMonth} currYear={currYear} handleNext={nextMonth} handlePrevious={prevMonth} handleSelect={handleSelect} arr={arr}/>
         <Month month = {data[indx]} cm={indx +1 % 12 === parseInt(charMonth)}/>
       </div>
