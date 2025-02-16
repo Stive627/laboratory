@@ -1,13 +1,13 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { ProfileProvider } from './logic/ContextProfile';
 import Profile from './Pages/Profile';
-import Calendar from './components/calendars/Calendar'
+import Cooks from './components/Cooks';
 function App() {
   return (
     <ProfileProvider>
       <Router>
         <Routes>
-          <Route path='/' element={<Calendar/>}/>
+          <Route path='/' element={<Cooks/>}/>
           <Route path='/profile' element={<Profile/>}/>
         </Routes>
       </Router>
