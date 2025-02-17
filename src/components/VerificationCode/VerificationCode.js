@@ -12,6 +12,12 @@ function VerificationCode() {
         setI(i + 1)
     }
     function handleKey(ekey, value){
+        if(ekey === 'Backspace' && !value && i===0){
+            return;
+        }
+        if(ekey === 'Backspace' && !value && i===5){
+            return;
+        }
         if(ekey === 'Backspace' && !value){
             setI(i - 1)
         }
