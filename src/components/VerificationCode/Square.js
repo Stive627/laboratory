@@ -2,7 +2,6 @@ import React from 'react'
 import { useScreen } from './useScreen'
 
 function Square({value, handleChange,handlekey, active}) {
-    console.log(active)
     const large = useScreen()
   return (
     <div className ={`p-1 border rounded-md ${active || value  ? 'border-blue-600':'border-black'}`}>

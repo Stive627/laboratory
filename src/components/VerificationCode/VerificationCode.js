@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useScreen } from './useScreen'
 import Square from './Square'
 
-function VerificationCode() {
+function VerificationCode({handleCode}) {
     const large = useScreen()
     const [localcode, setLocalcode] = useState(['','','','','',''])
     const [i, setI] = useState(0)
@@ -10,14 +10,9 @@ function VerificationCode() {
         localcode[index] = value
         setLocalcode(localcode)
         setI(i + 1)
+        handleCode(localcode.join(''))
     }
     function handleKey(ekey, value){
-        if(ekey === 'Backspace' && !value && i===0){
-            return;
-        }
-        if(ekey === 'Backspace' && !value && i===5){
-            return;
-        }
         if(ekey === 'Backspace' && !value){
             setI(i - 1)
         }

@@ -1,5 +1,5 @@
 import React, {useState } from 'react'
-import Elt from './Elt'
+import Elt from '../Elt'
 
 function BirthFinal() {
     const number = ['01', '02', '03', '04' ,'05', '06', '07', '08', '09', '10']
