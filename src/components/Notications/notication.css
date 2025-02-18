@@ -1,0 +1,9 @@
+.first{
+    animation: firstAnimation linear 7s;
+}
+@keyframes firstAnimation {
+    50%{transform: translateX(-100px);}
+    60%{transform: translate(-100px);}
+    100%{transform: translateX(150px);}
+    
+}

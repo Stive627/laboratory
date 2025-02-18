@@ -1,17 +1,12 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import { ProfileProvider } from './logic/ContextProfile';
-import Profile from './Pages/Profile';
-import VerificationCode from './components/VerificationCode/VerificationCode';
+import Notication from './components/Notications/Notication';
 function App() {
   return (
-    <ProfileProvider>
       <Router>
         <Routes>
-          <Route path='/' element={<VerificationCode/>}/>
-          <Route path='/profile' element={<Profile/>}/>
+          <Route path='/' element={<Notication/>}/>
         </Routes>
       </Router>
-    </ProfileProvider>
   );
 }
 
