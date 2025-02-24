@@ -1,16 +1,14 @@
 import React from 'react'
-import DoneAllIcon from '@mui/icons-material/DoneAll';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import './notication.css'
 
 //We have to add the overflow hidden while using this functionnality 
 function Notication() {
   return (
-    <div className=' w-screen overflow-x-hidden'>
-                <div className=' absolute -right-4'>
-                    <div className=' w-64 bg-white border border-blue-500 p-2 '>
-                        <p className = 'text-[18px]'><DoneAllIcon/>{' '} Password sent</p>
-                    </div>
-                </div>
+        <div className=' absolute right-0 -top-14'>
+            <div className=' w-64 bg-white border border-blue-500 p-2 rounded-md first'>
+                <p className = 'text-[18px]'><CheckCircleIcon className=' rounded-full text-blue-600'/>{' '} Password sent</p>
+            </div>
     </div>
     )
 }
