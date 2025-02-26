@@ -1,10 +1,10 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Notication from './components/Notications/Notication';
+import VerificationCode from './components/VerificationCode/VerificationCode';
 function App() {
   return (
       <Router>
         <Routes>
-          <Route path='/' element={<Notication/>}/>
+          <Route path='/' element={<VerificationCode handleCode={(value)=> {}}/>}/>
         </Routes>
       </Router>
   );
