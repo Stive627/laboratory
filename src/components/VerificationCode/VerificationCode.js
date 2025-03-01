@@ -6,7 +6,6 @@ function VerificationCode({handleCode}){
     const large = useScreen()
     const [localcode, setLocalcode] = useState(['','','','','',''])
     const [i, setI] = useState(0)
-    const [test, setTest] = useState('')
     const [err, setErr] = useState(false)
     function handleChange(value, index){
         localcode[index] = value
@@ -50,7 +49,6 @@ function VerificationCode({handleCode}){
         <div className={`${large? 'w-1/2' : 'w-full px-6'} flex flex-row gap-3 justify-center`}>
             {localcode.map((elt, indx) => <Square err={err} active={i === indx} value={elt} handleChange={(value) => handleChange(value, indx)} handlekey={(ekey) => handleKey(ekey)} key={indx}/>)}
         </div>
-        <input onKeyUp={(e) => console.log(e.key)} size={1} value={test} onChange={(e) => setTest(e.target.value.slice(0,1))} className=' border w-full'/>
     </div>
   )
 }
