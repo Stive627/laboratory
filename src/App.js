@@ -1,10 +1,11 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import VerificationCode from './components/VerificationCode/VerificationCode';
+import AttachFile from './components/AttachFile/AttachFile';
+
 function App() {
   return (
       <Router>
         <Routes>
-          <Route path='/' element={<VerificationCode handleCode={(value)=> {}}/>}/>
+          <Route path='/' element={<AttachFile/>}/>
         </Routes>
       </Router>
   );
