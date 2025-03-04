@@ -1,11 +1,11 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import AttachFile from './components/AttachFile/AttachFile';
+import SelectUI from './components/SelectUI/SelectUI';
 
 function App() {
   return (
       <Router>
         <Routes>
-          <Route path='/' element={<AttachFile/>}/>
+          <Route path='/' element={<SelectUI/>}/>
         </Routes>
       </Router>
   );
