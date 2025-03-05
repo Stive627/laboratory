@@ -1,11 +1,11 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import SelectUI from './components/SelectUI/SelectUI';
+import ImgHover from './ImageHover/ImgHover';
 
 function App() {
   return (
       <Router>
         <Routes>
-          <Route path='/' element={<SelectUI/>}/>
+          <Route path='/' element={<ImgHover/>}/>
         </Routes>
       </Router>
   );
